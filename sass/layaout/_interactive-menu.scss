@@ -1,0 +1,73 @@
+.section-one__int-menu{
+    background-color: rgb(214, 192, 151);
+    width: 100%;
+    height: auto;
+    min-height: 520px;
+    margin-top:0;
+}
+
+.int-menu__category{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 15px;
+}
+
+.category__button{
+    font-family: "Zalando Sans SemiExpanded", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+    width: auto;
+    padding: 3px;
+    background-color: rgb(240, 193, 123);
+    border: 1px solid white;
+    border-radius: 10%;
+    color: #5c3613;
+}
+
+.int-menu__cards{
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(130px,1fr));
+    margin-left: 5%;
+    margin-top: 20px;
+    gap: 16px;
+}
+
+.int-menu__cards::after{
+    content: "";
+    flex: auto;
+}
+.card{
+    width: 130px;
+    height: 180px;
+    background-color: #6e1505;
+    color: white;
+    position: relative;
+}
+
+.card h4{
+    font-size: 16px;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.card button {
+    position: absolute;
+    bottom: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color:rgb(240, 193, 123) ;
+}
+
+.card img{
+    width: 110px;
+}
+
+.category__button.btn-active{
+  background-color: #9e420d; /* un color más fuerte */
+  color: white;
+  font-weight: 600;
+}

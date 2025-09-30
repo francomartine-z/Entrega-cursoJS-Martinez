@@ -4,11 +4,329 @@
     <meta charset='utf-8'>
     <title> Curso de JS - Preentrega-1 </title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
-   
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Zalando+Sans+SemiExpanded:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css"> 
 </head>
 <body>
-    <h1>Lienzo Cafe-Bar</h1>
-    <script src="script.js"></script>
-    <p>El total de la cuenta esta en la consola</p>
+    <header>
+        <div class="header__menu-button btn-nav">
+                <button class="header__menu-icon" id="menuBtn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
+                         <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"/>
+                    </svg>
+                </button>
+        </div>
+        <nav class="nav" id="menuList">
+            <div class="nav__close-button btn-nav">
+                <button class="nav__close-icon" id="closeBtn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
+                        <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z"/>
+                    </svg>
+                </button>
+            </div>
+            <a href="index.html" class="nav__logo">Lienzo Cafe-Bar</a>
+            <ul class="nav__list">
+                <li class="nav__item">
+                    <a href="index.html">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cup-hot-fill" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M.5 6a.5.5 0 0 0-.488.608l1.652 7.434A2.5 2.5 0 0 0 4.104 16h5.792a2.5 2.5 0 0 0 2.44-1.958l.131-.59a3 3 0 0 0 1.3-5.854l.221-.99A.5.5 0 0 0 13.5 6zM13 12.5a2 2 0 0 1-.316-.025l.867-3.898A2.001 2.001 0 0 1 13 12.5"/>
+                            <path d="m4.4.8-.003.004-.014.019a4 4 0 0 0-.204.31 2 2 0 0 0-.141.267c-.026.06-.034.092-.037.103v.004a.6.6 0 0 0 .091.248c.075.133.178.272.308.445l.01.012c.118.158.26.347.37.543.112.2.22.455.22.745 0 .188-.065.368-.119.494a3 3 0 0 1-.202.388 5 5 0 0 1-.253.382l-.018.025-.005.008-.002.002A.5.5 0 0 1 3.6 4.2l.003-.004.014-.019a4 4 0 0 0 .204-.31 2 2 0 0 0 .141-.267c.026-.06.034-.092.037-.103a.6.6 0 0 0-.09-.252A4 4 0 0 0 3.6 2.8l-.01-.012a5 5 0 0 1-.37-.543A1.53 1.53 0 0 1 3 1.5c0-.188.065-.368.119-.494.059-.138.134-.274.202-.388a6 6 0 0 1 .253-.382l.025-.035A.5.5 0 0 1 4.4.8m3 0-.003.004-.014.019a4 4 0 0 0-.204.31 2 2 0 0 0-.141.267c-.026.06-.034.092-.037.103v.004a.6.6 0 0 0 .091.248c.075.133.178.272.308.445l.01.012c.118.158.26.347.37.543.112.2.22.455.22.745 0 .188-.065.368-.119.494a3 3 0 0 1-.202.388 5 5 0 0 1-.253.382l-.018.025-.005.008-.002.002A.5.5 0 0 1 6.6 4.2l.003-.004.014-.019a4 4 0 0 0 .204-.31 2 2 0 0 0 .141-.267c.026-.06.034-.092.037-.103a.6.6 0 0 0-.09-.252A4 4 0 0 0 6.6 2.8l-.01-.012a5 5 0 0 1-.37-.543A1.53 1.53 0 0 1 6 1.5c0-.188.065-.368.119-.494.059-.138.134-.274.202-.388a6 6 0 0 1 .253-.382l.025-.035A.5.5 0 0 1 7.4.8m3 0-.003.004-.014.019a4 4 0 0 0-.204.31 2 2 0 0 0-.141.267c-.026.06-.034.092-.037.103v.004a.6.6 0 0 0 .091.248c.075.133.178.272.308.445l.01.012c.118.158.26.347.37.543.112.2.22.455.22.745 0 .188-.065.368-.119.494a3 3 0 0 1-.202.388 5 5 0 0 1-.252.382l-.019.025-.005.008-.002.002A.5.5 0 0 1 9.6 4.2l.003-.004.014-.019a4 4 0 0 0 .204-.31 2 2 0 0 0 .141-.267c.026-.06.034-.092.037-.103a.6.6 0 0 0-.09-.252A4 4 0 0 0 9.6 2.8l-.01-.012a5 5 0 0 1-.37-.543A1.53 1.53 0 0 1 9 1.5c0-.188.065-.368.119-.494.059-.138.134-.274.202-.388a6 6 0 0 1 .253-.382l.025-.035A.5.5 0 0 1 10.4.8"/>
+                        </svg> Inicio
+                    </a>
+                </li>
+                <li class="nav__item">
+                    <a href="#">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-people-fill" viewBox="0 0 16 16">
+                            <path d="M7 14s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1zm4-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6m-5.784 6A2.24 2.24 0 0 1 5 13c0-1.355.68-2.75 1.936-3.72A6.3 6.3 0 0 0 5 9c-4 0-5 3-5 4s1 1 1 1zM4.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5"/>
+                        </svg> Nosotros
+                    </a>
+                </li>
+                <li class="nav__item">
+                    <a href="#">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-phone" viewBox="0 0 16 16">
+                          <path d="M11 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1zM5 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z"/>
+                          <path d="M8 14a1 1 0 1 0 0-2 1 1 0 0 0 0 2"/>
+                        </svg> Contactos
+                    </a>
+                </li>
+            </ul>
+            <button class="nav__cart">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart4" viewBox="0 0 16 16">
+                    <path d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5M3.14 5l.5 2H5V5zM6 5v2h2V5zm3 0v2h2V5zm3 0v2h1.36l.5-2zm1.11 3H12v2h.61zM11 8H9v2h2zM8 8H6v2h2zM5 8H3.89l.5 2H5zm0 5a1 1 0 1 0 0 2 1 1 0 0 0 0-2m-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0m9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2m-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0"/>
+                </svg>
+                <span id="cart-count">0</span>
+            </button>
+        </nav>
+    </header>
+    <main>
+        <section class="section-one">
+            <h1 class="section-one__title">Lienzo Cafe-Bar</h1>
+            <div class="section-one__int-menu">
+                <div class="int-menu__category">
+                    <button #="todo" class="category__button btn-active">Todo</button>
+                    <button #="cafe" class="category__button">Cafe</button>
+                    <button #="pasteleria" class="category__button">Pasteleria</button>
+                    <button #="platos" class="category__button">Platos</button>
+                    <button #="bebidas" class="category__button">Bebidas</button>
+                </div>
+                <div class="int-menu__cards">
+                    <div class="card todo cafe">
+                        <h4>Espresso</h4>
+                        <img src="#">
+                        <p>$2200</p>
+                        <button class="buy-btn" id="producto-1">Comprar</button>
+                    </div>
+                    <div class="card todo cafe">
+                        <h4>Doble Esspresso</h4>
+                        <img src="#">
+                        <p>$2800</p>
+                        <button class="buy-btn" id="producto-2">Comprar</button>
+                    </div>
+                    <div class="card todo cafe">
+                        <h4>Americano</h4>
+                        <img src="#">
+                        <p>$2800</p>
+                        <button class="buy-btn" id="producto-3">Comprar</button>
+                    </div>
+                    <div class="card todo cafe">
+                        <h4>Cortado</h4>
+                        <img src="#">
+                        <p>$2800</p>
+                        <button class="buy-btn" id="producto-4">Comprar</button>
+                    </div>
+                    <div class="card todo cafe">
+                        <h4>Macchiato</h4>
+                        <img src="#">
+                        <p>$2800</p>
+                        <button class="buy-btn" id="producto-5">Comprar</button>
+                    </div>
+                    <div class="card todo cafe">
+                        <h4>Latte</h4>
+                        <img src="#">
+                        <p>$2800</p>
+                        <button class="buy-btn" id="producto-6">Comprar</button>
+                    </div>
+                    <div class="card todo cafe">
+                        <h4>Capuccino</h4>
+                        <img src="#">
+                        <p>$3500</p>
+                        <button class="buy-btn" id="producto-7">Comprar</button>
+                    </div>
+                    <div class="card todo cafe">
+                        <h4>Flat White</h4>
+                        <img src="#">
+                        <p>$3500</p>
+                        <button class="buy-btn" id="producto-8">Comprar</button>
+                    </div>
+                    <div class="card todo pasteleria">
+                        <h4>2 Medialunas</h4>
+                        <img src="#">
+                        <p>$2800</p>
+                        <button class="buy-btn" id="producto-9">Comprar</button>
+                    </div>
+                    <div class="card todo pasteleria">
+                        <h4>Cheescake</h4>
+                        <img src="#">
+                        <p>$3800</p>
+                        <button class="buy-btn" id="producto-10">Comprar</button>
+                    </div>
+                    <div class="card todo pasteleria">
+                        <h4>Lemon Pie</h4>
+                        <img src="#">
+                        <p>$3800</p>
+                        <button class="buy-btn" id="producto-11">Comprar</button>
+                    </div>
+                    <div class="card todo pasteleria">
+                        <h4>Selvanegra</h4>
+                        <img src="#">
+                        <p>$3800</p>
+                        <button class="buy-btn" id="producto-12">Comprar</button>
+                    </div>
+                    <div class="card todo pasteleria">
+                        <h4>Chocotorta</h4>
+                        <img src="#">
+                        <p>$3800</p>
+                        <button class="buy-btn" id="producto-13">Comprar</button>
+                    </div>
+                    <div class="card todo pasteleria">
+                        <h4>Tiramisu</h4>
+                        <img src="#">
+                        <p>$3800</p>
+                        <button class="buy-btn" id="producto-14">Comprar</button>
+                    </div>
+                    <div class="card todo pasteleria">
+                        <h4>Tostados de JyQ </h4>
+                        <img src="#">
+                        <p>$3200</p>
+                        <button class="buy-btn" id="producto-15">Comprar</button>
+                    </div>
+                    <div class="card todo pasteleria">
+                        <h4>Croissants con JyQ</h4>
+                        <img src="#">
+                        <p>$3200</p>
+                        <button class="buy-btn" id="producto-16">Comprar</button>
+                    </div>
+                    <div class="card todo pasteleria">
+                        <h4>Chipas 6 u.</h4>
+                        <img src="#">
+                        <p>$3000</p>
+                        <button class="buy-btn" id="producto-17">comprar</button>
+                    </div>
+                    <div class="card todo pasteleria">
+                        <h4>Tostadas</h4>
+                        <img src="#">
+                        <p>$2000</p>
+                        <button class="buy-btn" id="producto-18">Comprar</button>
+                    </div>
+                    <div class="card todo platos">
+                        <h4>Hamburguesas con Papas Fritas</h4>
+                        <img src="#">
+                        <p>$9500</p>
+                        <button class="buy-btn" id="producto-19">Comprar</button>
+                    </div>
+                    <div class="card todo platos">
+                        <h4>Milanesa a la Napolitana con Guarnicion</h4>
+                        <img src="#">
+                        <p>$12000</p>
+                        <button class="buy-btn" id="producto-20">Comprar</button>
+                    </div>
+                    <div class="card todo platos">
+                        <h4>Papas con Cheddar</h4>
+                        <img src="#">
+                        <p>$7000</p>
+                        <button class="buy-btn" id="producto-21">Comprar</button>
+                    </div>
+                    <div class="card todo platos">
+                        <h4>Ensalada Cesar</h4>
+                        <img src="#">
+                        <p>$5000</p>
+                        <button class="buy-btn" id="producto-22">Comprar</button>
+                    </div>
+                    <div class="card todo platos">
+                        <h4>Ensalada de Rucula, Tomate y Queso</h4>
+                        <img src="#">
+                        <p>$5000</p>
+                        <button class="buy-btn" id="producto-23">Comprar</button>
+                    </div>
+                    <div class="card todo platos">
+                        <h4>Nachos con Guacamole</h4>
+                        <img src="#">
+                        <p>$7000</p>
+                        <button class="buy-btn" id="producto-24">Comprar</button>
+                    </div>
+                    <div class="card todo platos">
+                        <h4>Nachos con Cheddar</h4>
+                        <img src="#">
+                        <p>$7000</p>
+                        <button class="buy-btn" id="producto-25">Comprar</button>
+                    </div>
+                    <div class="card todo platos">
+                        <h4>Picada para 4</h4>
+                        <img src="#">
+                        <p>$25000</p>
+                        <button class="buy-btn" id="producto-26">Comprar</button>
+                    </div>
+                    <div class="card todo platos">
+                        <h4>Pizza de muzzarella</h4>
+                        <img src="#">
+                        <p>$12000</p>
+                        <button class="buy-btn" id="producto-27">Comprar</button>
+                    </div>
+                    <div class="card todo platos">
+                        <h4>Pizzas Especiales</h4>
+                        <img src="#">
+                        <p>$14000</p>
+                        <button class="buy-btn" id="producto-28">Comprar</button>
+                    </div>
+                    <div class="card todo bebidas">
+                        <h4>Agua Mineral 600ml</h4>
+                        <img src="#">
+                        <p>$2000</p>
+                        <button class="buy-btn" id="producto-29">Comprar</button>
+                    </div>
+                    <div class="card todo bebidas">
+                        <h4>Gaseosa linea Coca-Cola 355ml</h4>
+                        <img src="#">
+                        <p>$2500</p>
+                        <button class="buy-btn" id="producto-30">Comprar</button>
+                    </div>
+                    <div class="card todo bebidas">
+                        <h4>Limonada 1L</h4>
+                        <img src="#">
+                        <p>$5000</p>
+                        <button class="buy-btn" id="producto-31">Comprar</button>
+                    </div>
+                    <div class="card todo bebidas">
+                        <h4>Cerveza Quilmes Chopp</h4>
+                        <img src="#">
+                        <p>$4000</p>
+                        <button class="buy-btn" id="producto-32">Comprar</button>
+                    </div>
+                    <div class="card todo bebidas">
+                        <h4>Cerveza Heineken Chopp</h4>
+                        <img src="#">
+                        <p>$5000</p>
+                        <button class="buy-btn" id="producto-33">Comprar</button>
+                    </div>
+                    <div class="card todo bebidas">
+                        <h4>Cervezas Artesanales media pinta</h4>
+                        <img src="#">
+                        <p>$7000</p>
+                        <button class="buy-btn" id="producto-34">Comprar</button>
+                    </div>
+                    <div class="card todo bebidas">
+                        <h4>Vino Botella</h4>
+                        <img src="#">
+                        <p>$12000</p>
+                        <button class="buy-btn" id="producto-35">Comprar</button>
+                    </div>
+                    <div class="card todo bebidas">
+                        <h4>Fernet con Cola</h4>
+                        <img src="#">
+                        <p>$8000</p>
+                        <button class="buy-btn" id="producto-36">Comprar</button>
+                    </div>
+                    <div class="card todo bebidas">
+                        <h4>Negroni</h4>
+                        <img src="#">
+                        <p>$9000</p>
+                        <button class="buy-btn" id="producto-37">Comprar</button>
+                    </div>
+                    <div class="card todo bebidas">
+                        <h4>Gin Tonic</h4>
+                        <img src="#">
+                        <p>$8000</p>
+                        <button class="buy-btn" id="producto-38">Comprar</button>
+                    </div>
+                    <div class="card todo bebidas">
+                        <h4>Mojito</h4>
+                        <img src="#">
+                        <p>$7000</p>
+                        <button class="buy-btn" id="producto-39">Comprar</button>
+                    </div>
+                </div>
+            </div>
+        </section> 
+    </main>
+    <div id="cart-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
+                        <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z"/>
+                </svg>
+            </span>
+            <h2>Tu pedido</h2>
+            <ul class="cart-list"></ul>
+        </div>
+    </div>
+    <script src="scripts/header.js"></script>
+    <script src="scripts/interactive-menu.js"></script>
+    <script src="scripts/cart.js"></script>
+    <script src="scripts/modal.js"></script>
+    <script src="scripts/order-list.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 </body>
 </html>
