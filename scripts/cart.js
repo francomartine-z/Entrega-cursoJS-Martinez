@@ -1,5 +1,5 @@
 const cartCount = document.getElementById('cart-count');//Llama al id = cart-count (el contador del carrito).
-let count = 0; //valor del contador
+let count = parseInt(localStorage.getItem('cartCount'))|| 0 ; //valor del contador, puede ser 0 o el valor cargado por el localStorage 
 
 function updateCartCount(){ //se encarga de verificar si hay algo agregado al carrito. De ser asi este lo mostrara
     if(count > 0){
@@ -8,6 +8,8 @@ function updateCartCount(){ //se encarga de verificar si hay algo agregado al ca
     } else{
         cartCount.style.display = 'none';
     }
+
+    localStorage.setItem('cartCount', count); //guarda en el localStorage el valor del carrito
 }
 
 function addToCart(){ //aumenta el contador del carrito.
@@ -22,11 +24,8 @@ function removeToCart(){ //resta valor del carrito en caso de que alguien quiera
     }
 }
 
-const buyButton = document.querySelectorAll('.card button');
+updateCartCount(); //carga el valor del carrito al cargar la pagina 
 
-buyButton.forEach(button  => {
-    button.addEventListener('click', ()=> {
-        addToCart();
-    })
-})
+window.cartManager = {addToCart, removeToCart } //esto permite hacer las funciones accesibles en otros scripts
+
 
