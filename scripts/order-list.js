@@ -41,6 +41,23 @@ function updateCart(){
     totalLi.textContent = `Total $${total}`;  //Sobreescribe el valor de la constante
     totalLi.style.fontWeight = 'bold';  //cambia el estilo a las letras
     cartList.appendChild(totalLi); //agrega la constante al final del modal
+
+    if (cart.length > 0){
+        const finalizeButton = document.createElement('button');
+        finalizeButton.innerText = 'Finalizar compra'
+
+        finalizeButton.addEventListener('click',()=>{
+            const confirmarCompra = confirm('¿Desea realizar la compra?');
+            if(confirmarCompra){
+                alert('¡Gracias por su compra!');
+                cart = [];
+                saveCart()
+                updateCart()
+                window.cartManager.resetCartCount();
+            }
+        })
+        cartList.appendChild(finalizeButton)
+    }
     saveCart();
 }
 
