@@ -12,7 +12,7 @@
 }
 
 .modal-content {
-    background-color: #fff;
+    background-color: #c78445;
     padding: 20px;
     border-radius: 10px;
     width: 90%;
@@ -30,4 +30,43 @@
 
 .cart-list{
     list-style-type: none;
+}
+
+.modal__title{
+    color: white;
+}
+
+.modal-list{
+    color: white;
+    font-size: 18px;
+    font-style: bold;
+}
+
+.close-modal{
+    color: white;
+    background: rgb(231, 188, 131);
+    border-radius: 10px;
+}
+
+.total{
+    color: #faf7f4;
+    font-size: 22px;
+    font-style: italic;
+}
+
+.btn-finalizar{
+    background-color: #9e420d;
+    color: white;
+    font-weight: 600;
+    padding: 10px;
+    border: 2px white solid;
+    margin-top:10px;
+}
+
+.btn-finalizar:hover{
+    background-color: #e08318;
+}
+
+.swal2-container {
+  z-index: 99999 !important;
 }

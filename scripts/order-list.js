@@ -14,11 +14,13 @@ function updateCart(){
 
     cart.forEach((item, index) =>{
         const li = document.createElement('li');  //crea un elemento "li".
+        li.className= "modal-list"; //agrega una clase a los objeto de la lista;
         li.textContent = `${item.name} (x ${item.quantity}) - $${item.price}`;  //cambia el texto de los "li" creados.
         li.style.textDecoration = 'none';
 
         const removeBtn = document.createElement('button'); //creamos un boton que remueva el producto en caso de quererlo
         removeBtn.textContent = "❌";
+        removeBtn.className = "close-modal";
         removeBtn.style.marginLeft = '10px';
         removeBtn.addEventListener('click',()=>{
             if (item.quantity > 1) {  //si la cantidad del producto es mayor a 1 entonces le resta 1 unidad.
@@ -38,23 +40,43 @@ function updateCart(){
     })
 
     const totalLi = document.createElement('li');  //crea otro elemento li
+    totalLi.className = "total"// le agrego una clase al total
     totalLi.textContent = `Total $${total}`;  //Sobreescribe el valor de la constante
     totalLi.style.fontWeight = 'bold';  //cambia el estilo a las letras
     cartList.appendChild(totalLi); //agrega la constante al final del modal
 
+    if(total == 0){
+        totalLi.textContent = "Todavia no realizo su pedido.";
+    }
+
     if (cart.length > 0){
         const finalizeButton = document.createElement('button');
-        finalizeButton.innerText = 'Finalizar compra'
+        finalizeButton.className = "btn-finalizar"
+        finalizeButton.innerText = 'Finalizar compra';
 
         finalizeButton.addEventListener('click',()=>{
-            const confirmarCompra = confirm('¿Desea realizar la compra?');
-            if(confirmarCompra){
-                alert('¡Gracias por su compra!');
+            Swal.fire({
+                title: "¿Quiere realizar la compra?",
+                icon: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#a57825ff",
+                cancelButtonColor: "rgba(179, 156, 114, 1)",
+                confirmButtonText: "Si quiero realizar mi pedido!",
+                cancelButtonText: 'Cancelar'
+            }).then((result) => {
+            if (result.isConfirmed) {
                 cart = [];
                 saveCart()
                 updateCart()
                 window.cartManager.resetCartCount();
-            }
+
+                Swal.fire({
+                    title: "¡Compra realizada!",
+                    text: "Disfrute su pedido!!!",
+                    icon: "success"
+                });
+            } 
+        });
         })
         cartList.appendChild(finalizeButton)
     }
@@ -82,5 +104,17 @@ buyButtons.forEach(button =>{
        saveCart();
         // actualizar la lista del modal
         updateCart();
+
+        Toastify({
+
+            text: "Se añado el producto al carrito",
+
+            duration: 3000,
+            
+            style: {
+                background: "#b69142",
+            }
+
+        }).showToast();
     })
 })

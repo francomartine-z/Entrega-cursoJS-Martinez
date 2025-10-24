@@ -20,7 +20,7 @@ function renderProducts (arrayProductos){
 
 // Accedemos al array global
 async function init() {
-    const productosCargados = await window.obtenerProductos();
+    const productosCargados = await window.obtenerProductos(); //espera a que carguen las respuestas de obtenerProductos
     renderProducts(productosCargados);
 }
 

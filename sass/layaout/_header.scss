@@ -141,6 +141,11 @@
 }
 
 @media (min-width:768px) {
+    #cart-count{
+        right: 10px;
+        bottom: 30px;
+    }
+
     .btn-nav{
         display: none;
     }
