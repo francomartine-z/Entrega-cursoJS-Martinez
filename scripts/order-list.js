@@ -1,3 +1,5 @@
+//crea la lista de compra
+
 let cart = JSON.parse(localStorage.getItem('cart'))|| []; //Aqui van guardados los productos. Tambien carga los datos deun carrito guardado en el localStorage
 
 const buyButtons = document.querySelectorAll('.buy-btn');  //Llama a todos los botones de compra.

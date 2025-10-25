@@ -1,3 +1,5 @@
+//Activa las funciones del modal
+
 const cartBtn = document.querySelector('.nav__cart');   //Llamamos al boton del carrito
 const modal = document.getElementById('cart-modal');    //llamamos al div de modal
 const closeModal = document.querySelector('.modal .close');   //llama al boton close del modal

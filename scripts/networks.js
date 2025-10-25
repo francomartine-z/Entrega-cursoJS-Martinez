@@ -1,3 +1,5 @@
+//se encarga de una notificacion sobre redes sociales
+
 setTimeout(()=>{
     const reminder = document.createElement('div');  //Crea un contenedor.
     reminder.className ='social-reminder';  //Definimos la clase del Div.

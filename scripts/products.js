@@ -1,3 +1,5 @@
+//Se encarga de cargar los productos
+
 async function obtenerProductos(){
     try{
         const respuesta = await fetch('data/products.json');  //Espera a que cargue los datos del JSON y da una respuesta

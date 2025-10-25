@@ -1,3 +1,5 @@
+//Carga el contenido del main.
+
 //contenedor para crear tarjetas en el DOM
 const cardsContainer = document.querySelector('.int-menu__cards'); //esta constante llama al div de la misma clase
 

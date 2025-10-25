@@ -1,3 +1,5 @@
+//Actualiza el contador del carrito
+
 const cartCount = document.getElementById('cart-count'); //Llama al id = cart-count (el contador del carrito).
 let count = parseInt(localStorage.getItem('cartCount'))|| 0 ; //valor del contador, puede ser 0 o el valor cargado por el localStorage 
 

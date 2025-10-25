@@ -1,3 +1,5 @@
+//Se encarga de interactividad del header
+
 const menuBtn = document.getElementById('menuBtn');
 const closeBtn = document.getElementById('closeBtn');
 const menuList = document.getElementById('menuList');

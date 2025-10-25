@@ -1,3 +1,5 @@
+//maneja el menu interactivo del main
+
 //Las constante llaman a todos los selectores de las clases seleccionadas
 const categoryButtons = document.querySelectorAll('.category__button'); 
 const cards = document.querySelectorAll('.card');
