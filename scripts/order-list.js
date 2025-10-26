@@ -85,38 +85,32 @@ function updateCart(){
     saveCart();
 }
 
+cardsContainer.addEventListener('click', (e) => {
+    
+    if (!e.target.classList.contains('buy-btn')) return; // si el elemento de la card cliqueado no tiene la class "buy-btn" no se activa el evento
+
+    const button = e.target; // la tiene el valor al elemento cliqueado valido
+    const card = button.parentElement; // obtiene el valor del div padre mas cercano 
+    const productName = card.querySelector('h4').textContent; // obtiene el valor del h4 de card 
+    const productPrice = parseInt(card.querySelector('p').textContent.replace('$', ''));// quita los valores $ de los p de las cards para convertirlos en valor numerico
+
+    const existingProduct = cart.find(item => item.name === productName); //revisa si el item fue agregado al carrito 
+    if (existingProduct) {
+        existingProduct.quantity++; //si el producto existe solo suma la cantidad
+    } else {
+        cart.push({ name: productName, price: productPrice, quantity: 1 }); // si no existe 
+    }
+
+    window.cartManager.addToCart(); //añade los productos al carrito
+    updateCart();
+
+    Toastify({
+        text: "Se añado el producto al carrito",
+        duration: 3000,
+        style: { background: "#b69142" }
+    }).showToast();
+});
+
 updateCart(); //carga los datos al iniciar la pagina
-//agregar eventos a los botones
 
-buyButtons.forEach(button =>{
-    button.addEventListener('click',()=>{
-        const card = button.parentElement; //accedo al elemento padre mas cercano al elemeto
-        const productName = card.querySelector('h4').textContent; //la constante toma el valor del h4 
-        const productPrice = parseInt(card.querySelector('p').textContent.replace('$','')) //replace quita el $ del texto y lo cambia por un espado vacia y con el parseInt le da valor numerico
-        
-        const existingProduct = cart.find(item => item.name === productName);
 
-        if (existingProduct) {
-            existingProduct.quantity++; // aumenta cantidad
-        } else {
-            cart.push({ name: productName, price: productPrice, quantity: 1 });
-        }
-        
-        window.cartManager.addToCart();
-       saveCart();
-        // actualizar la lista del modal
-        updateCart();
-
-        Toastify({
-
-            text: "Se añado el producto al carrito",
-
-            duration: 3000,
-            
-            style: {
-                background: "#b69142",
-            }
-
-        }).showToast();
-    })
-})
