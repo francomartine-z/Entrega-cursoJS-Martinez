@@ -2,7 +2,7 @@
 
 //Las constante llaman a todos los selectores de las clases seleccionadas
 const categoryButtons = document.querySelectorAll('.category__button'); 
-const cards = document.querySelectorAll('.card');
+
 
 //Se usa forEach para recorrer toda la constante y asignarle la funcion button
 categoryButtons.forEach(button => { 
@@ -22,6 +22,8 @@ categoryButtons.forEach(button => {
 });
 
 function filterCards(category) {
+
+    const cards = document.querySelectorAll('.card'); // llamamos a todos los elementos con clase .card
     //recorre todas las cards
     cards.forEach(card => {
         //si la categoria es estrictamente igual a la clase todo el display de las cards se activa y muestra todas
