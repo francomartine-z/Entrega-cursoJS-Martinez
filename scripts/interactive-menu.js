@@ -28,11 +28,11 @@ function filterCards(category) {
     cards.forEach(card => {
         //si la categoria es estrictamente igual a la clase todo el display de las cards se activa y muestra todas
         if (category === 'todo') {
-            card.style.display = 'block';
+            card.style.display = 'flex';
         } //en caso de no ser igutaal a "todo" se vera a que categoria es igual dandole display:block; a la correcta y display:none; a la incorrecta  
         else {
             if (card.classList.contains(category)) {
-                card.style.display = 'block';
+                card.style.display = 'flex';
             } else {
                 card.style.display = 'none';
             }

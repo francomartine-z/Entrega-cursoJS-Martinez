@@ -4,6 +4,7 @@
     height: auto;
     min-height: 520px;
     margin-top:0;
+    padding-bottom:30px;
 }
 
 .int-menu__category{
@@ -23,6 +24,12 @@
     border: 1px solid white;
     border-radius: 10%;
     color: #5c3613;
+}
+
+.category__button.btn-active{
+  background-color: #9e420d; /* un color más fuerte */
+  color: white;
+  font-weight: 600;
 }
 
 .int-menu__cards{
@@ -79,12 +86,6 @@
     height: 90px;
     object-fit: cover;
     border-radius: 4px;
-}
-
-.category__button.btn-active{
-  background-color: #9e420d; /* un color más fuerte */
-  color: white;
-  font-weight: 600;
 }
 
 @media(min-width:425px){
